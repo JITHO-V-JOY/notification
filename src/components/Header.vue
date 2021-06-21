@@ -8,9 +8,9 @@
         </h2>
         <div class="user-wrapper">
             <i class="fas fa-bell"></i>
-             <img src="../../public/images/user.png" width="45px" height="40px" alt="">
+             <img src="../../public/images/user.png" width="40px" height="40px" alt="">
              <div>
-                    <h4>Admin</h4>
+                <h4>Admin</h4>
              </div>
         </div>
     </header>

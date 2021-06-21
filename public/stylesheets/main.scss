@@ -8,6 +8,7 @@ header{
     justify-content: space-between;
     padding: 1rem 1.5rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    height: 90px;
     
 }
 
@@ -33,4 +34,11 @@ header label span{
 .user-wrapper i {
     margin-right: 1rem;
     font-size: 2rem;
+}
+
+.main{
+    margin-top: 1px;
+    padding: 2rem 1.5rem;
+    background: whitesmoke;
+    min-height: calc(100vh - 90px);
 }
