@@ -1,14 +1,23 @@
 const state = {
-    show:"block"
+    show:"none"
 };
 
 const getters = {
     getDisplay : (state)=> state.show
 }
 
-const actions={};
+const actions={
+    toggleDisplay({commit}){
+        const show = state.show === "block" ? "show": "block";
+        commit('changeDisplay', show);
+    }
+};
 
-const mutations={};
+const mutations={
+    changeDisplay(state, show){
+        state.show = show
+    }
+};
 
 export default{
     state,

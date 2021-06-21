@@ -34,6 +34,7 @@ header label span{
 .user-wrapper i {
     margin-right: 1rem;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .main{
@@ -45,7 +46,7 @@ header label span{
 
 .notification{
     display: none;
-    background-color: azure;
+    background-color:white;
     height: 100%;
     position: absolute;
     right: 0;

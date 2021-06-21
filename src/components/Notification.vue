@@ -1,6 +1,5 @@
 <template>
     <div class="notification" v-bind:style="{display: getDisplay}">
-
     </div>
 </template>
 
