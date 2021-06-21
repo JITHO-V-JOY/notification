@@ -14,7 +14,7 @@ header {
   padding: 1rem 1.5rem;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  height: 90px;
+  height: 50px;
 }
 
 header h2 {
@@ -50,5 +50,15 @@ header label span {
   padding: 2rem 1.5rem;
   background: whitesmoke;
   min-height: calc(100vh - 90px);
+}
+
+.notification {
+  display: none;
+  background-color: azure;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 400px;
+  top: 0;
 }
 /*# sourceMappingURL=main.css.map */
