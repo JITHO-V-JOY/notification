@@ -46,10 +46,56 @@ header label span{
 
 .notification{
     display: none;
-    background-color:white;
+    background-color:	#02838d;
     height: 100%;
     position: absolute;
     right: 0;
-    width: 400px;
+    width: 430px;
     top: 0;
+}
+
+.alertHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background: blue;
+    color: white;
+    font-size: 20px;
+
+    i{
+        cursor: pointer;
+    }
+}
+
+.alertHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    color: white;
+
+    p{
+        text-align: center;
+        margin: 1rem;
+    }
+    small{
+        margin: 0.5rem;
+        padding: 0rem 5px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+
+}
+
+.alertbtn{
+    background: blue;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
 }

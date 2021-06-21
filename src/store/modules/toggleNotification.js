@@ -8,7 +8,7 @@ const getters = {
 
 const actions={
     toggleDisplay({commit}){
-        const show = state.show === "block" ? "show": "block";
+        const show = state.show === "block" ? "none": "block";
         commit('changeDisplay', show);
     }
 };
