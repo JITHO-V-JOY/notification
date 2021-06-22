@@ -9,12 +9,11 @@ import { mapActions } from 'vuex'
 export default {
   name:"App",
   methods:{
-        ...mapActions(['getCount', 'getNotifications'])
+        ...mapActions(['getCount'])
 
   },
   created() {
     this.getCount();
-    this.getNotifications();
   }
 }
 </script>
