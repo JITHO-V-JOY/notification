@@ -50,7 +50,7 @@ header label span {
   margin-top: 1px;
   padding: 2rem 1.5rem;
   background: whitesmoke;
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 50px);
 }
 
 .notification {
@@ -77,6 +77,23 @@ header label span {
 }
 
 .alertHeader i {
+  cursor: pointer;
+}
+
+.alertHistoryHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 14px;
+  background: blue;
+  color: white;
+  font-size: 20px;
+}
+
+.alertHistoryHead i {
   cursor: pointer;
 }
 
