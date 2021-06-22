@@ -22,7 +22,7 @@ const actions={
 
     async getNotifications({commit}){
         const notification = await axios.get('http://localhost:3000/notifications');
-        commit('setNotification', notification.data[0]? notification.data: null)
+        commit('setNotification', notification.data)
     },
     async getNewNotifications({commit}){
         const newNotification = await axios.get('http://localhost:3000/notifications');

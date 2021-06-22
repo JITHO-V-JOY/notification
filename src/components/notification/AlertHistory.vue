@@ -5,6 +5,7 @@
             <i class="fas fa-times" v-on:click="toggleDisplay"></i>
         </div>
         <AlertComponent v-for="notification in getAllNotifications" v-bind:notification="notification" v-bind:key="notification.id"/>
+        
 
     </div>
   

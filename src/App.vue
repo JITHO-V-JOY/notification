@@ -13,9 +13,9 @@ export default {
 
   },
   created() {
+    this.getNewNotifications();
     this.getCount();
     this.getNotifications();
-    this.getNewNotifications();
   }
 }
 </script>
