@@ -3,22 +3,22 @@
         {
             "id":1,
             "title": "Hello this is a notification sample one",
-            "read": true
+            "read": false
         },
         {
             "id":2,
             "title": "Hello this is a notification sample two",
-            "read": false   
+            "read": true  
         },
         {
             "id":3,
             "title": "Hello this is a notification sample three",
-            "read": false
+            "read": true
         },
         {
             "id":4,
             "title": "Hello this is a notification sample four",
-            "read": false
+            "read": true
         }
     ]
 }

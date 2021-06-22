@@ -40,7 +40,7 @@ const mutations={
         state.notifications = notification
     },
     setNewNotification(state, newNotifications){
-        state.newNotification = newNotifications
+        state.newNotifications = newNotifications
     }
 };
 
