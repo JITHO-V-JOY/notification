@@ -7,7 +7,7 @@
             Demo
         </h2>
         <div class="user-wrapper">
-            <i class="fas fa-bell" v-on:click="toggleDisplay"><b-badge class="danger">{{getNotificationCount}}</b-badge></i>
+            <i class="fas fa-bell" v-on:click="toggleDisplay"><b-badge v-if="getNotificationCount" class="danger">{{getNotificationCount}}</b-badge></i>
              <img src="../../public/images/user.png" width="40px" height="40px" alt="">
              <div>
                 <h4>Admin</h4>
