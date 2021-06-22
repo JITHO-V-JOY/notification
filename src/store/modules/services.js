@@ -26,7 +26,7 @@ const actions={
     },
     async getNewNotifications({commit}){
         const newNotification = await axios.get('http://localhost:3000/notifications');
-        commit('setNewNotification', newNotification.filter((notification)=> notification.read === false))
+        commit('setNewNotification', newNotification.data.filter((notification)=> notification.read === false))
 
     }
     
