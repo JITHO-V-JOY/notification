@@ -4,4 +4,18 @@
   </div>
 </template>
 
+<script>
+import { mapActions } from 'vuex'
+export default {
+  name:"App",
+  methods:{
+        ...mapActions(['getCount'])
+
+  },
+  created() {
+    this.getCount();
+  }
+}
+</script>
+
 
