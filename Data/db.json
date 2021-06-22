@@ -3,12 +3,12 @@
         {
             "id":1,
             "title": "Hello this is a notification sample one",
-            "read": false
+            "read": true
         },
         {
             "id":2,
             "title": "Hello this is a notification sample two",
-            "read": false
+            "read": false   
         },
         {
             "id":3,

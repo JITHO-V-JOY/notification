@@ -50,7 +50,7 @@ header label span{
     min-height: 100%;
     position: absolute;
     right: 0;
-    max-width: 430px;
+    width: 430px;
     top: 0;
 }
 
@@ -91,6 +91,10 @@ header label span{
         text-align: center;
         margin: 1rem;
     }
+    img{
+        display: flex;
+       
+    }
     small{
         margin: 0.5rem;
         padding: 0rem 5px;
@@ -110,6 +114,10 @@ header label span{
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    margin-top: 1rem;
 }
 
 .danger{
@@ -118,4 +126,25 @@ header label span{
     font-size: 15px;
     padding: 6px;
     border-radius: 45px;
+}
+
+.card{
+    margin: 1rem 1rem;
+    background: rgb(216, 214, 214);
+    padding: 2rem;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+}
+
+.showNotification{
+    background: blue;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-top: 0.2rem;
+    color: white;
+    cursor: pointer;
+
 }
