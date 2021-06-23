@@ -25,5 +25,8 @@
             "title": "Hello this is a notification sample five",
             "read": true
         }
-    ]
+    ],
+    "count" :{
+        "num": 0
+    }
 }

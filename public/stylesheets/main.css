@@ -55,11 +55,11 @@ header label span {
 
 .notification {
   display: none;
-  background-color: #02838d;
+  background-color: #cacece;
   height: 100%;
-  position: absolute;
+  position: fixed;
   right: 0;
-  width: 430px;
+  width: 356px;
   top: 0;
   overflow: scroll;
 }
@@ -76,29 +76,12 @@ header label span {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 14px;
-  background: blue;
+  background: #e91f5c;
   color: white;
   font-size: 20px;
 }
 
 .alertHeader i {
-  cursor: pointer;
-}
-
-.alertHistoryHead {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 14px;
-  background: blue;
-  color: white;
-  font-size: 20px;
-}
-
-.alertHistoryHead i {
   cursor: pointer;
 }
 
@@ -116,8 +99,8 @@ header label span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 100px;
-  color: white;
+  padding: 50px;
+  color: #0c0b0b;
 }
 
 .alertHome p {
@@ -125,34 +108,11 @@ header label span {
   margin: 1rem;
 }
 
-.alertHome img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .alertHome small {
   margin: 0.5rem;
   padding: 0rem 5px;
   text-align: center;
   font-size: 15px;
-}
-
-.alertbtn {
-  background: blue;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  margin-top: 1rem;
 }
 
 .danger {
@@ -164,8 +124,10 @@ header label span {
 }
 
 .card {
-  margin: 1rem 1rem;
-  background: #d8d6d6;
+  margin: 0.5rem 0.1rem;
+  max-width: 356px;
+  max-height: 203px;
+  background: #ffffff;
   padding: 2rem;
   border-radius: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -173,12 +135,12 @@ header label span {
 }
 
 .showNotification {
-  background: blue;
+  background: #6b6b6d;
   border: none;
   font-size: 15px;
   border-radius: 5px;
   padding: 0.5rem;
-  margin-top: 0.2rem;
+  margin-top: 0.7rem;
   color: white;
   cursor: pointer;
 }
