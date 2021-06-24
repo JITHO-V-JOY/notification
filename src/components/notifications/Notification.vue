@@ -5,7 +5,7 @@
             <i class="fas fa-times" v-on:click="toggleDisplay"></i>
          </div>
         <div v-if="count">
-                <AlertComponent v-for="notification in notifications" v-bind:notification="notification" v-bind:key="notification.id"/>
+                <AlertComponent v-for="notification in getAllNotifications" v-bind:notification="notification" v-bind:key="notification.id"/>
                 
         </div>
         <div v-else class="alertHome">
@@ -19,26 +19,24 @@
 <script>
 import {mapActions, mapGetters} from 'vuex'
 import AlertComponent from './AlertComponent.vue'
-import {getCount, getNotifications} from './services'
+import {getCount } from './services'
 
 export default {
    name:"Notification",
    data(){
        return{
            count:0,
-           notifications:[]
        }
    },
-   computed:mapGetters(['getDisplay', 'getAllNewNotifications', 'getNotificationCount']),
+   computed:mapGetters(['getDisplay', 'getAllNotifications']),
    components:{
        AlertComponent
    },
    methods:{
-       ...mapActions(['toggleDisplay', 'toggleAlert'])
+       ...mapActions(['toggleDisplay'])
    },
    async created(){
      this.count = await getCount();
-     this.notifications = await getNotifications();
    }
   
 }

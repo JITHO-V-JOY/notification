@@ -1,28 +1,29 @@
 
+import {getNotifications} from '../../components/notifications/services'
 
 const state = {
     show:"none",
-    toggle: true,
+    notifications:[],
     opacity: 1
 };
 
 const getters = {
     getDisplay : (state)=> state.show,
-    getToggle : (state) => state.toggle,
-    getOpacity: (state)=> state.opacity
+    getOpacity: (state)=> state.opacity,
+    getAllNotifications: (state)=> state.notifications
 }
 
 const actions={
-    toggleDisplay({commit}){
+    async toggleDisplay({commit}){
+        if(state.show === "none"){
+            const response = await getNotifications();
+            commit('setNotifications', response);
+        }
         const show = state.show === "block" ? "none": "block"
         const opacity = state.opacity === 1? 0.2:1
         commit('setOpacity', opacity)
         commit('changeDisplay', show)
-    },
-    toggleAlert({commit}){
-        const toggle = !state.toggle;
-        commit('changeAlert', toggle)
-    },
+    }
     
 };
 
@@ -30,11 +31,11 @@ const mutations={
     changeDisplay(state, show){
         state.show = show
     },
-    changeAlert(state, toggle){
-        state.toggle = toggle
-    },
     setOpacity(state, opacity){
         state.opacity = opacity
+    },
+    setNotifications(state, notifications){
+        state.notifications = notifications
     }
 };
 

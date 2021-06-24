@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex' 
+import { mapActions} from 'vuex' 
 import {getCount} from './notifications/services'
 export default {
   name:"Header",
@@ -26,7 +26,6 @@ export default {
           count:0
       }
   },
-  computed:mapGetters(['getNotificationCount']),
   methods: {
       ...mapActions(['toggleDisplay'])
   },
