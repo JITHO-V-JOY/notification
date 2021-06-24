@@ -1,28 +1,50 @@
 <template>
   <div class="home">
-    <div v-bind:style="{opacity: getOpacity}">
-       <Header/> 
+    <div v-bind:style="{opacity: opacity}">
+      <Header v-on:toggleDisplay="show" v-bind:count="count"/> 
       <Main /> 
     </div>
-      <Notification />
+      <Notification v-bind:display="display" v-bind:notifications="notifications" v-on:getCount="getCount"  v-on:closeDisplay="close" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+
 // @ is an alias to /src
 import Header from '../components/Header.vue'
 import Main from '../components/Main.vue'
 import Notification from '../components/notifications/Notification.vue'
+import {getNotifications} from '../components/notifications/services'
 export default {
   name: 'Home',
-  computed:{
-    ...mapGetters(['getOpacity'])
+  data(){
+    return{
+      opacity: 1,
+      display: "none",
+      count:0,
+      notifications:[]
+    }
   },
   components: {
     Header,
     Main,
     Notification
+  },
+  methods:{
+   async show(){
+      this.opacity = (this.opacity) === 1 ? 0.2 : 1
+      if(this.display === "none"){
+          this.notifications = await getNotifications();
+      }
+      this.display = (this.display === "block" ? "none": "block")
+    },
+    close(){
+      this.opacity = (this.opacity) === 1 ? 0.2 : 1
+      this.display = (this.display === "block" ? "none": "block")
+    },
+    getCount(count){
+      this.count = count
+    }
   }
 }
 </script>

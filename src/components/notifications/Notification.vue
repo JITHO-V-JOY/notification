@@ -1,11 +1,11 @@
 <template>
-    <div class="notification" v-bind:style="{display: getDisplay}">
+    <div class="notification" v-bind:style="{display: display}">
         <div class="alertHeader">
             <span>Alerts</span>
-            <i class="fas fa-times" v-on:click="toggleDisplay"></i>
+            <i class="fas fa-times" v-on:click="$emit('closeDisplay')"></i>
          </div>
         <div v-if="count">
-                <AlertComponent v-for="notification in getAllNotifications" v-bind:notification="notification" v-bind:key="notification.id"/>
+                <AlertComponent v-for="notification in notifications" v-bind:notification="notification" v-bind:key="notification.id"/>
                 
         </div>
         <div v-else class="alertHome">
@@ -17,26 +17,30 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
 import AlertComponent from './AlertComponent.vue'
 import {getCount } from './services'
 
 export default {
    name:"Notification",
+   props:['display', 'notifications'],
    data(){
        return{
            count:0,
        }
    },
-   computed:mapGetters(['getDisplay', 'getAllNotifications']),
    components:{
        AlertComponent
    },
    methods:{
-       ...mapActions(['toggleDisplay'])
+       accessCount(){
+           setInterval(async function(){
+               this.count = await getCount()
+               this.$emit('getCount', this.count)
+           }.bind(this), 1000)
+       }
    },
    async created(){
-     this.count = await getCount();
+       this.accessCount()
    }
   
 }

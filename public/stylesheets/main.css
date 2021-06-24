@@ -59,7 +59,7 @@ header label span {
   height: 100%;
   position: fixed;
   right: 0;
-  width: 356px;
+  max-width: 356px;
   top: 0;
   overflow: scroll;
 }
@@ -76,6 +76,9 @@ header label span {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 14px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   background: #e91f5c;
   color: white;
   font-size: 20px;
