@@ -2,8 +2,8 @@
     "notifications":[
         {
             "id":1,
-            "title": "Hello this is a notification sample one",
-            "read": true    
+            "title": "Hello this is a notification sample one hello gsaghsgdhgh jhsjhsj dsh jshjh lklkglh yoiuoyi gsaghsgdhgh jhsjhsj dsh jshjh lklkglh yoiuoyi",
+            "read": true   
         },
         {   
             "id":2,
@@ -57,6 +57,6 @@
         }
     ],
     "count" :{
-        "num":  19
+        "num": 10
     }
 }

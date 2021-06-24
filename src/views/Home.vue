@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <div v-bind:style="{opacity: opacity}">
-      <Header v-on:toggleDisplay="show" v-bind:count="count"/> 
+      <Header v-on:showNotifications="showNotifications" v-bind:count="count"/> 
       <Main /> 
     </div>
-      <Notification v-bind:display="display" v-bind:notifications="notifications" v-on:getCount="getCount"  v-on:closeDisplay="close" />
+      <Notification  v-bind:display="display" v-bind:notifications="notifications" v-on:getCount="getCount"  v-on:closeNotifications="closeNotifications"  v-on:readNotification="reaNotification"/>
   </div>
 </template>
 
@@ -31,19 +31,26 @@ export default {
     Notification
   },
   methods:{
-   async show(){
+   async showNotifications(){
       this.opacity = (this.opacity) === 1 ? 0.2 : 1
       if(this.display === "none"){
           this.notifications = await getNotifications();
       }
       this.display = (this.display === "block" ? "none": "block")
     },
-    close(){
+    closeNotifications(){
       this.opacity = (this.opacity) === 1 ? 0.2 : 1
       this.display = (this.display === "block" ? "none": "block")
     },
     getCount(count){
       this.count = count
+    },
+    reaNotification(id){
+      this.notifications.map((notification)=>{
+        if(notification.id === id){
+          notification.read = true
+        }
+      })
     }
   }
 }
