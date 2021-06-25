@@ -1,16 +1,14 @@
 <template>
 <b-card > 
-    <div class="close">
-             <i class="fas fa-times"  v-on:click="$emit('readNotification', notification.id)"></i>
-    </div>
-    
-    <b-card-text>
+    <b-card-body>
+         <b-card-text>
             {{notification.title}} 
 
     </b-card-text>
     
-    
     <b-button href="#" variant="secondary">Action</b-button>
+    </b-card-body>
+   
   </b-card>
 
 </template>

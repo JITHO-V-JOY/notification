@@ -4,7 +4,7 @@
       <Header v-on:showNotifications="showNotifications" v-bind:count="count"/> 
       <Main /> 
     </div>
-      <Notification  v-bind:display="display" v-bind:notifications="notifications" v-on:getCount="getCount"  v-on:closeNotifications="closeNotifications"  v-on:readNotification="reaNotification"/>
+      <Notification ref="notification"  v-bind:display="display" v-bind:notifications="notifications" v-on:getCount="getCount"  v-on:closeNotifications="closeNotifications"/>
   </div>
 </template>
 
@@ -44,13 +44,6 @@ export default {
     },
     getCount(count){
       this.count = count
-    },
-    reaNotification(id){
-      this.notifications.map((notification)=>{
-        if(notification.id === id){
-          notification.read = true
-        }
-      })
     }
   }
 }

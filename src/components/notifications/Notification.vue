@@ -1,8 +1,7 @@
 <template>
     <div class="notification" v-bind:style="{display: display}">
         <b-navbar sticky variant="danger" type="faded">
-            <b-navbar-brand style="color:white;" href="#">Alert</b-navbar-brand>
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+            <b-navbar-brand style="color:white;" href="#">Alerts</b-navbar-brand>
             <b-collapse id="nav-collapse" is-nav>
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
@@ -13,9 +12,9 @@
             </b-collapse>
         </b-navbar>
        
-        <div v-if="unreadCount">
+        <div v-if="count">
                 <div v-for="notification in notifications" v-bind:key="notification.id">
-                    <AlertComponent v-if="!notification.read"  v-bind:notification="notification" v-on:readNotification="readNotification"/>
+                    <AlertComponent  v-bind:notification="notification"/>
                 </div>
         </div>
         <div v-else class="alertHome">
@@ -38,12 +37,6 @@ export default {
            count:0,
        }
    },
-   computed:{
-       unreadCount : function(){
-           let notifications =  this.notifications.filter((notification)=> notification.read === false);
-           return notifications.length
-       }
-   },
    components:{
        AlertComponent
    },
@@ -52,11 +45,7 @@ export default {
            setInterval(async function(){
                this.count = await getCount()
                this.$emit('getCount', this.count)
-           }.bind(this), 10000)
-       },
-       readNotification(id){
-           console.log("id", id)
-           this.$emit('readNotification', id);
+           }.bind(this), 2000)
        }
    },
    async created(){

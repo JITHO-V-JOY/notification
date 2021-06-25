@@ -2,13 +2,13 @@
     "notifications":[
         {
             "id":1,
-            "title": "Hello this is a notification sample one hello gsaghsgdhgh jhsjhsj dsh jshjh lklkglh yoiuoyi gsaghsgdhgh jhsjhsj dsh jshjh lklkglh yoiuoyi",
-            "read": true   
+            "title": "Hello this is a notification sample one",
+            "read": false 
         },
         {   
             "id":2,
             "title": "Hello this is a notification sample two",
-            "read": true
+            "read": false
         },
         {
             "id":3,
@@ -57,6 +57,6 @@
         }
     ],
     "count" :{
-        "num": 10
+        "num": 2
     }
 }

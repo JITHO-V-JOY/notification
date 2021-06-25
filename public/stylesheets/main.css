@@ -53,6 +53,10 @@ a {
   text-align: center;
 }
 
+.alertHome img {
+  margin: 1rem;
+}
+
 .alertHome small {
   text-align: center;
   font-size: 15px;
