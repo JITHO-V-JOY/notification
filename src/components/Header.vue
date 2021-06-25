@@ -9,7 +9,7 @@
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
                 <b-nav-item>
-                         <i class="fas fa-bell" style="font-size: 20px" v-on:click="$emit('showNotifications')"><b-badge v-if="count" pill variant="danger">{{count}}</b-badge></i>  
+                         <i class="fas fa-bell" style="font-size: 20px" v-on:click="$emit('showNotifications')"><b-badge v-if="count" pill variant="danger">{{count}}+</b-badge></i>  
                 </b-nav-item>
             </b-navbar-nav>
             </b-collapse>

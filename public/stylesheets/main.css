@@ -17,7 +17,7 @@ a {
 
 .notification {
   display: none;
-  background-color: #cacece;
+  background-color: #e4e7e7;
   height: 100%;
   position: fixed;
   right: 0;
@@ -49,12 +49,13 @@ a {
 }
 
 .alertHome p {
-  margin-top: 0.5rem;
   text-align: center;
 }
 
-.alertHome img {
-  margin: 1rem;
+.alertHome i {
+  color: #f05555;
+  font-size: 294px;
+  margin: 60px;
 }
 
 .alertHome small {
