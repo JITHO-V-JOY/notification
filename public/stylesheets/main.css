@@ -17,7 +17,7 @@ a {
 
 .notification {
   display: none;
-  background-color: #e4e7e7;
+  background-color: #c9cece;
   height: 100%;
   position: fixed;
   right: 0;
@@ -38,13 +38,10 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px;
+  padding: 10px;
   color: #0c0b0b;
 }
 
@@ -52,30 +49,14 @@ a {
   text-align: center;
 }
 
-.alertHome i {
-  color: #f05555;
-  font-size: 294px;
-  margin: 60px;
+.alertHome img {
+  max-width: 100%;
+  height: auto;
+  margin: 29.66px;
 }
 
 .alertHome small {
   text-align: center;
   font-size: 15px;
-}
-
-.close i {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  color: black;
-  cursor: pointer;
-}
-
-.card-text {
-  font-size: 19px;
-  max-width: 320px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -12,13 +12,13 @@
             </b-collapse>
         </b-navbar>
        
-        <div v-if="count">
-                <div v-for="notification in notifications" v-bind:key="notification.id">
-                    <AlertComponent  v-bind:notification="notification"/>
-                </div>
+        <div v-if="notifications[0]">
+            <div v-for="notification in notifications" v-bind:key="notification.id">
+                <AlertComponent  v-bind:notification="notification"/>
+            </div>
         </div>
         <div v-else class="alertHome">
-            <i class="fas fa-comment-dots"></i>            
+            <img src="../../../public/images/alert.svg" width="324.08px"  height="293.66px" alt="">           
             <p>You don't have any alerts</p>
             <small>You will see notifications appear here</small>
         </div>
@@ -27,8 +27,8 @@
 
 <script>
 import AlertComponent from './AlertComponent.vue'
-import {getCount, getNotifications } from './services'
-import {timeInterval} from '../../../public/config'
+import { getNotifications } from './services'
+import { getNotificationCount} from '../../../public/config'
 
 export default {
    name:"Notification",
@@ -44,12 +44,6 @@ export default {
        AlertComponent
    },
    methods:{
-       accessNotificationCount(){
-           setInterval(async function(){
-               this.count = await getCount()
-               this.$emit('getCount', this.count)
-           }.bind(this), timeInterval)
-       },
         async showNotifications(){
             this.opacity = (this.opacity) === 1 ? 0.2 : 1
             this.$emit('getOpacity', this.opacity)
@@ -66,7 +60,10 @@ export default {
    },
     
    async created(){
-       this.accessNotificationCount()
+       getNotificationCount((count)=>{
+            this.count = count
+            this.$emit('getCount', this.count)
+       })
    }
   
 }

@@ -2,7 +2,6 @@ import axios from 'axios'
 
 async function getCount(){
     const response = await axios.get('http://localhost:3000/count');
-    console.log("count", response.data.num)
     return response.data.num;
 }
 

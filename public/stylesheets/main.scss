@@ -16,7 +16,7 @@ a{
 
 .notification{
     display: none;
-    background-color:	#e4e7e7;
+    background-color:	#c9cece;
     height: 100%;
     position:fixed;
     right: 0;
@@ -28,46 +28,31 @@ a{
 
 .notification::-webkit-scrollbar {
     display: none;
-  }
+}
 
 .alertHome{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding: 10px;
     color: rgb(12, 11, 11);
 
     p{
         text-align: center;
     }
-    i{
-        color: rgb(240, 85, 85);
-        font-size: 294px;
-        margin: 60px;
+    
+    img{    
+        max-width: 100%;
+        height: auto;
+        margin: 29.66px;
     }
    
     small{
         text-align: center;
         font-size: 15px;
     }
-
-
 }
 
-.close {
-    i{
-        display: flex;
-        justify-content: flex-end;
-        color: black;
-        cursor: pointer;
-    }
-}
 
-.card-text{
-    font-size:19px;
-    max-width: 320px;
-
-}
 
 
