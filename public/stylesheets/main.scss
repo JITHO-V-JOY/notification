@@ -1,40 +1,10 @@
 *{
-    box-sizing: border-box;
+    box-sizing: content-box;
     margin: 0;   
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    height: 50px;
-    
-}
-
-header h2{
-    color: #222;
-}
-
-header label span{
-    font-size: 1.7rem;
-    padding-right: 1rem;
-}
-
-.user-wrapper{
-    display: flex;
-    align-items: center;
-}
-
-.user-wrapper img{
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
-.user-wrapper i {
-    margin-right: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
+a{
+    color: white;
 }
 
 .main{
@@ -46,76 +16,43 @@ header label span{
 
 .notification{
     display: none;
-    background-color:	#02838d;
-    min-height: 100%;
-    position: absolute;
+    background-color:	#c9cece;
+    height: 100%;
+    position:fixed;
     right: 0;
-    max-width: 430px;
+    max-width: 356px;
     top: 0;
+    overflow: scroll;
+   
 }
 
-.alertHeader{
-    display: flex;
-    justify-content: space-between;
-    padding: 14px;
-    background: blue;
-    color: white;
-    font-size: 20px;
-
-    i{
-        cursor: pointer;
-    }
-}
-
-.alertHistoryHead{
-    display: flex;
-    justify-content: space-between;
-    padding: 14px;
-    background: blue;
-    color: white;
-    font-size: 20px;
-    i{
-        cursor: pointer;
-    }
+.notification::-webkit-scrollbar {
+    display: none;
 }
 
 .alertHome{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 100px;
-    color: white;
+    padding: 10px;
+    color: rgb(12, 11, 11);
 
     p{
         text-align: center;
-        margin: 1rem;
     }
+    
+    img{    
+        max-width: 100%;
+        height: auto;
+        margin: 29.66px;
+    }
+   
     small{
-        margin: 0.5rem;
-        padding: 0rem 5px;
         text-align: center;
         font-size: 15px;
     }
-
-
 }
 
-.alertbtn{
-    background: blue;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-}
 
-.danger{
-    background-color: red;
-    color: white;
-    font-size: 15px;
-    padding: 6px;
-    border-radius: 45px;
-}
+
+

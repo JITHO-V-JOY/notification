@@ -1,49 +1,11 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   margin: 0;
 }
 
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1rem 1.5rem;
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  height: 50px;
-}
-
-header h2 {
-  color: #222;
-}
-
-header label span {
-  font-size: 1.7rem;
-  padding-right: 1rem;
-}
-
-.user-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.user-wrapper img {
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-
-.user-wrapper i {
-  margin-right: 1rem;
-  font-size: 2rem;
-  cursor: pointer;
+a {
+  color: white;
 }
 
 .main {
@@ -55,46 +17,17 @@ header label span {
 
 .notification {
   display: none;
-  background-color: #02838d;
-  min-height: 100%;
-  position: absolute;
+  background-color: #c9cece;
+  height: 100%;
+  position: fixed;
   right: 0;
-  max-width: 430px;
+  max-width: 356px;
   top: 0;
+  overflow: scroll;
 }
 
-.alertHeader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 14px;
-  background: blue;
-  color: white;
-  font-size: 20px;
-}
-
-.alertHeader i {
-  cursor: pointer;
-}
-
-.alertHistoryHead {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 14px;
-  background: blue;
-  color: white;
-  font-size: 20px;
-}
-
-.alertHistoryHead i {
-  cursor: pointer;
+.notification::-webkit-scrollbar {
+  display: none;
 }
 
 .alertHome {
@@ -105,44 +38,25 @@ header label span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 100px;
-  color: white;
+  padding: 10px;
+  color: #0c0b0b;
 }
 
 .alertHome p {
   text-align: center;
-  margin: 1rem;
+}
+
+.alertHome img {
+  max-width: 100%;
+  height: auto;
+  margin: 29.66px;
 }
 
 .alertHome small {
-  margin: 0.5rem;
-  padding: 0rem 5px;
   text-align: center;
   font-size: 15px;
-}
-
-.alertbtn {
-  background: blue;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.danger {
-  background-color: red;
-  color: white;
-  font-size: 15px;
-  padding: 6px;
-  border-radius: 45px;
 }
 /*# sourceMappingURL=main.css.map */
