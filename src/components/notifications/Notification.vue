@@ -60,7 +60,6 @@ export default {
    },
     
    async created(){
-       
        getNotificationCount((count)=>{
             this.count = count
             this.$emit('getCount', this.count)
