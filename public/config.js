@@ -8,4 +8,5 @@ function getNotificationCount(callback){
              }, timeInterval)
 }
 
+
 export{ getNotificationCount}
