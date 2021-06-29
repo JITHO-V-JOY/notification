@@ -1,11 +1,15 @@
 <template>
   <div class="home">
-    <div v-bind:style="{opacity: opacity}">
-      <Header v-on:showNotifications="showNotifications" v-bind:count="count"/> 
+    <b-overlay :show="show">
+      <Header @showNotifications="showNotifications" :count="notificationCount"/> 
       <Main /> 
-    </div>
-      <Notification ref="notification" v-on:getCount="getCount"  v-on:getOpacity="getOpacity"/>
+        <template #overlay>
+          <p></p>
+        </template>
+        <Notification ref="notification" />
+    </b-overlay>
   </div>
+  
 </template>
 
 <script>
@@ -16,12 +20,12 @@ import Main from '../components/Main.vue'
 import Notification from '../components/notifications/Notification.vue'
 
 
+
 export default {
   name: 'Home',
   data(){
     return{
-      opacity: 1,
-      count:0
+      isMounted: false
     }
   },
   components: {
@@ -29,16 +33,40 @@ export default {
     Main,
     Notification
   },
-  methods:{
-    showNotifications(){
-        this.$refs.notification.showNotifications()
+  computed:{
+    /**
+     * for fetching notification count from service
+     */
+    notificationCount: function() {
+       if(!this.isMounted)
+        return 0;
+      else{
+          return this.$refs.notification.$refs.type.count
+      }
     },
-    getCount(count){
-      this.count = count
-    },
-    getOpacity(opacity){
-      this.opacity = opacity
+    /**
+     * computed property show, for toggling overlay
+     */
+    show: function(){
+      if(!this.isMounted)
+        return false;
+      else
+        return this.$refs.notification.$refs.type.show
     }
+  },
+  methods:{
+    /**
+     * to display the notification component and its messages
+     */
+    showNotifications(){
+        return this.$refs.notification.$refs.type.showNotifications()
+    }
+  },
+  mounted(){
+    /**
+     * implemented for computed property, unless {{this.$refs}} will not work
+     */
+    this.isMounted = true;
   }
 }
 </script>

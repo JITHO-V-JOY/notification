@@ -12,7 +12,7 @@
             </b-collapse>
         </b-navbar>
        
-        <div v-if="notifications[0]">
+        <div v-if="count">
             <div v-for="notification in notifications" v-bind:key="notification.id">
                 <AlertComponent  v-bind:notification="notification"/>
             </div>
@@ -27,12 +27,11 @@
 
 <script>
 import AlertComponent from './AlertComponent.vue'
-import { getNotifications, getCount } from './services'
-import { timeInterval } from '../../../public/config'
+import { getNotifications} from './services'
 
 
 export default {
-   name:"Pull",
+   name:"Push",
    data(){
        return{
            count:0,
@@ -46,21 +45,6 @@ export default {
    },
    methods:{
        /**
-        * Pull Notification method
-        * repeated on each time interval and update the count 
-        */
-       getNotificationCount(){
-            setInterval(() => {
-                 getCount((count, err)=>{
-                     if(err){
-                        console.log("error", err)
-                     }else{
-                        this.count = count;
-                     }
-                 })
-             }, timeInterval)
-       },
-       /**
         * When user clicks the bell icon in the header this function will get invoked
         * filter the unread and readed messages
         * update the notifications data, toggle show for overlay, and update display value to show notification component
@@ -69,7 +53,7 @@ export default {
             if(this.display === "none" && this.count > 0){
                 getNotifications((notifications, err)=>{
                     if(err){
-                        alert("error", err);
+                        console.log("error", err)
                     }
                     if(notifications){
                           let unread = notifications.filter((notification)=> notification.read === false)
@@ -78,12 +62,10 @@ export default {
                           this.show = this.show ? false : true
                           this.display = (this.display === "block" ? "none": "block")
                     }
-                });
-              
+                })
             }
-           
        },
-       /**
+        /**
         * invoked when user clicks the close button in the Alert Header
         * toggle show for overlay
         * and hide visibility of the notification component
@@ -92,13 +74,6 @@ export default {
             this.show = this.show ? false : true
             this.display = (this.display === "block") ? "none": "block"
       },
-   },
-    
-   async created(){
-       /**
-        * starts fetching notification count
-        */
-       this.getNotificationCount()
    }
   
 }

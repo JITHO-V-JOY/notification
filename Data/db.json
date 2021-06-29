@@ -2,71 +2,71 @@
     "notifications":[
         {
             "id":1,
-            "title": "Hello this is a notification sample one",
+            "message": "Hello this is a notification sample one",
             "read": false ,
             "type": "action"
         },
         {   
             "id":2,
-            "title": "Hello this is a notification sample two",
+            "message": "Hello this is a notification sample two",
             "read": false,
             "type": "link"
         },
         {
             "id":3,
-            "title": "Hello this is a notification sample three",
+            "message": "Hello this is a notification sample three",
             "read": true,
             "type": "action"
         },
         {
             "id":4,
-            "title": "Hello this is a notification sample four",
+            "message": "Hello this is a notification sample four",
             "read": true,
             "type": "link"
         },
         {
             "id":5,
-            "title": "Hello this is a notification sample five",
+            "message": "Hello this is a notification sample five",
             "read": true,
             "type": "action"
         },
         
         {
             "id":6,
-            "title": "Hello this is a notification sample five",
+            "message": "Hello this is a notification sample five",
             "read": true,
             "type": "link"
         },
         
         {
             "id":7,
-            "title": "Hello this is a notification sample five",
+            "message": "Hello this is a notification sample five",
             "read": true,
             "type": "action"
         }
         ,
         {
             "id":8,
-            "title": "Hello this is a notification sample five",
+            "message": "Hello this is a notification sample five",
             "read": true,
             "type": "action"
         }
         ,
         {
             "id":9,
-            "title": "Hello this is a notification sample five",
+            "message": "Hello this is a notification sample five",
             "read": true,
             "type": "link"
         }
         ,
         {
             "id":10,
-            "title": "Hello this is a notification sample ten",
+            "message": "Hello this is a notification sample ten",
             "read": false,
             "type": "link"
         }
     ],
     "count" :{
-        "num": 40
+        "num": 7
     }
 }

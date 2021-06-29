@@ -1,15 +1,26 @@
 import axios from '../../axios-index'
 
-async function getCount(){
-    const response = await axios.get('/count');
-    return response.data.num;
+function getCount(callback){
+    axios.get('/count').then((response, err)=>{
+        if(err){
+            throw err;
+        }   
+        if(response){
+           callback(response.data.num, null)
+        }
+    }).catch((err)=> callback(null, err));
 }
 
-async function getNotifications(){
-        const response = await axios.get('/notifications');
-        console.log("response", response.data)
-        return  response.data;
-    
+
+function getNotifications(callback){
+    axios.get('/notifications').then((response, err)=>{
+        if(err){
+            throw err;
+        }   
+        if(response){
+           callback(response.data, null)
+        }
+    }).catch((err)=> callback(null, err));
 }
 
 export {getCount, getNotifications}

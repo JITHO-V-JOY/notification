@@ -1,31 +1,26 @@
 <template>
-        <Pull v-if="type === 'PULL'" ref="pull" v-on:getCount="getCount"  v-on:getOpacity="getOpacity" />
+        <component :is="notification" ref="type" />
 </template>
 
 <script>
         import Pull from './Pull.vue'
+        import Push from './Push.vue'
         import {notificationType} from '../../../public/config'
         export default {
-        name:"Notification",
-        data(){
-            return{
-                type: notificationType
-            }
-        },
-        components:{
-            Pull
-        },
-        methods:{
-            getCount(count){
-                this.$emit('getCount', count)
+            name:"Notification",
+            components:{
+                Pull,
+                Push
             },
-            getOpacity(opacity){
-                this.$emit('getOpacity', opacity)
-            },
-
-            showNotifications(){
-                this.$refs.pull.showNotifications()
+            computed:{
+                /**
+                 * to dynamically render specific notification component
+                 */
+                notification: function(){
+                    if(notificationType === "PUSH")
+                        return Push
+                    return Pull   
+                }   
             }
-        }
         }
 </script>

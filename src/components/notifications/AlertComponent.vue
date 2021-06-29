@@ -2,7 +2,7 @@
 <b-card v-if="notification.read" class="read" > 
     <b-card-body >
          <b-card-text> 
-           {{notification.title}}
+           {{notification.message}}
           </b-card-text>
             <router-link v-if="notification.type === 'link'" to="/" class="link">Link</router-link>
            <b-button v-else href="#" variant="secondary">Action</b-button>
@@ -13,7 +13,7 @@
   <b-card v-else > 
     <b-card-body >
          <b-card-text> 
-           {{notification.title}}
+           {{notification.message}}
           </b-card-text>
             <router-link v-if="notification.type === 'link'" to="/" class="link">Link</router-link>
            <b-button v-else href="#" variant="secondary">Action</b-button>
