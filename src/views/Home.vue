@@ -41,7 +41,7 @@ export default {
        if(!this.isMounted)
         return 0;
       else{
-          return this.$refs.notification.$refs.type.count
+          return this.$refs.notification.count()
       }
     },
     /**
@@ -51,7 +51,7 @@ export default {
       if(!this.isMounted)
         return false;
       else
-        return this.$refs.notification.$refs.type.show
+        return this.$refs.notification.show()
     }
   },
   methods:{
@@ -59,7 +59,7 @@ export default {
      * to display the notification component and its messages
      */
     showNotifications(){
-        return this.$refs.notification.$refs.type.showNotifications()
+        this.$refs.notification.showNotifications()
     }
   },
   mounted(){
