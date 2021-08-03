@@ -1,22 +1,22 @@
 <template>
 <b-card v-if="notification.read" class="read" > 
     <b-card-body >
-         <b-card-text> 
+         <p> 
            {{notification.message}}
-          </b-card-text>
-            <router-link v-if="notification.type === 'link'" to="/" class="link">Link</router-link>
-           <b-button v-else href="#" variant="secondary">Action</b-button>
+          </p>
+            <router-link v-if="notification.type === 'link'" to="/" >Link</router-link>
+           <base-form-button v-else href="#" label="Action" :disabled="true" ></base-form-button>
     </b-card-body>
 
   </b-card>
 
-  <b-card v-else > 
+  <b-card v-else class="not-read" > 
     <b-card-body >
          <b-card-text> 
            {{notification.message}}
           </b-card-text>
             <router-link v-if="notification.type === 'link'" to="/" class="link">Link</router-link>
-           <b-button v-else href="#" variant="secondary">Action</b-button>
+           <base-form-button v-else href="#" label="Action" ></base-form-button>
     </b-card-body>
 
   </b-card>
@@ -35,14 +35,12 @@ export default {
     font-style: italic;
     color: rgb(185, 164, 185);
     background: whitesmoke;
+    margin: 5px 1px;
   }
-  .link{
-    background: rgb(4, 173, 4);
-    padding: 10px 20px;
-    color: white;
-
-    border-radius: 5px ;
-    cursor: pointer;
+  .not-read{
+    background: whitesmoke;
+    margin: 5px 1px;
   }
+ 
 </style>
 
