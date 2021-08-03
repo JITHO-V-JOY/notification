@@ -1,7 +1,8 @@
-import axios from '../../axios-index'
+import axios from 'axios'
+import {URL} from '../../../public/config/notification'
 
 function getCount(callback){
-    axios.get('/count').then((response, err)=>{
+    axios.get(`${URL}/count`).then((response, err)=>{
         if(err){
             throw err;
         }   
@@ -13,7 +14,7 @@ function getCount(callback){
 
 
 function getNotifications(callback){
-    axios.get('/notifications').then((response, err)=>{
+    axios.get(`${URL}/notifications`).then((response, err)=>{
         if(err){
             throw err;
         }   
