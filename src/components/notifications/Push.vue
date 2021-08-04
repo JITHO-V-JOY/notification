@@ -41,7 +41,7 @@ export default {
         * update the notifications data, toggle show for overlay, and update display value to show notification component
         */
         showNotifications(){
-            if(this.display === "none" && this.count > 0){
+            if(this.count > 0){
                 getNotifications((notifications, err)=>{
                     if(err){
                         console.log("error", err)
@@ -53,6 +53,8 @@ export default {
                           this.display = (this.display === "block" ? "none": "block")
                     }
                 })
+            }else{
+                this.display = (this.display === "block" ? "none": "block")
             }
        },
         /**
